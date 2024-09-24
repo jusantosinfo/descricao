@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main-content">
+        <h1>Cardápio</h1>
+        <div class="cardapio">
+            <div class="prato">
+                <img src="macarrao.jpg" alt="Macarrão e tomate seco com rúcula">
+                <p>Macarrão e tomate seco com rúcula - Um prato leve e saboroso, perfeito para os amantes de massas.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="risoto.png" alt="Risoto de cogumelos">
+                <p>Risoto de cogumelos - Cremoso e recheado com sabores intensos dos cogumelos frescos.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="sushi.jpg" alt="Sushi Variado">
+                <p>Sushi Variado - Uma seleção de sushis frescos, com peixes selecionados e ingredientes de qualidade.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="salada.jpg" alt="Salada de Quinoa">
+                <p>Salada de Quinoa - Uma salada saudável com quinoa, legumes frescos e um toque de limão.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="bife.jpg" alt="Bife com Batatas">
+                <p>Bife com Batatas - Um clássico, suculento bife grelhado acompanhado de batatas rústicas.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="taco.jpg" alt="Tacos Mexicanos">
+                <p>Tacos Mexicanos - Tortilhas recheadas com carne, legumes e um toque de guacamole.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="pizza.jpg" alt="Pizza Margherita">
+                <p>Pizza Margherita - A clássica pizza italiana com molho de tomate, mozzarella e manjericão.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="fruto.jpg" alt="Frutos do Mar">
+                <p>Frutos do Mar - Uma combinação deliciosa de camarões, lulas e peixe fresco grelhado.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="brownie.jpg" alt="Brownie de Chocolate">
+                <p>Brownie de Chocolate - Uma sobremesa rica e indulgente, perfeita para os chocólatras.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="pave.jpg" alt="Pavê de Chocolate">
+                <p>Pavê de Chocolate - Uma deliciosa sobremesa em camadas, que derrete na boca.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Feito por Julia Santos</p>
+    </footer>
+
+    <script>
+        function lerDescricao(botao) {
+            window.speechSynthesis.cancel();
+            const descricaoImagem = botao.parentElement.querySelector('p').innerText;
+            lerTexto(descricaoImagem);
+        }
+        function lerTexto(texto) {
+            const mensagem = new SpeechSynthesisUtterance(texto);
+            window.speechSynthesis.speak(mensagem);
+        }
+    </script>
+</body>
+</html>
